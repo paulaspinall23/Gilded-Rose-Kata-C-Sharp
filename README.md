@@ -18,6 +18,6 @@ Open this folder in IntelliJ / Visual Studio Code.
 or VSCode.  
 Your trainer can show you how to do this, if you need any help.
 
-5. Run this command to run your code:  
+5. Change directory to "Chessington.UI", and run this command to run your code:  
 `dotnet run`
 or run the project in your IDE (CTRL+F5 or ⌘+F5 usually)

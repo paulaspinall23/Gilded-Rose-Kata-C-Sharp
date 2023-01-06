@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Chessington.UI/App.axaml" value="Chessington.UI/Chessington.UI.csproj" />
+        <entry key="Chessington.UI/Views/MainWindow.axaml" value="Chessington.UI/Chessington.UI.csproj" />
+        <entry key="Chessington/App.axaml" value="Chessington/Chessington.csproj" />
+        <entry key="Chessington/Chessboard.axaml" value="Chessington/Chessington.csproj" />
+        <entry key="Chessington/MainWindow.axaml" value="Chessington/Chessington.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
