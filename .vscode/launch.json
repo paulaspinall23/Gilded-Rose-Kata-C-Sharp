@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/ExerciseTemplate/bin/Debug/net6.0/ExerciseTemplate.dll",
+            "program": "${workspaceFolder}/GildedRose-CSharp/bin/Debug/net6.0/GildedRose-CSharp.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ExerciseTemplate",
+            "cwd": "${workspaceFolder}/GildedRose-CSharp",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
