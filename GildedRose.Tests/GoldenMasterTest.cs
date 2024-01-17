@@ -23,10 +23,11 @@ namespace GildedRose.Tests
 
             var gildedRose = new GildedRoseShop(items);
             
-            gildedRose.UpdateQuality();
+            //gildedRose.UpdateQuality();
+            items = gildedRose.UpdateItems(items).ToList();
             
             Assert.AreEqual(
-                gildedRose.ToString(),
+                gildedRose.StringifyItems(items),
                 "4 Pints of Milk, 9, 19, Aged Brie, 1, 1, Elixir of the Mongoose, 4, 6, Fabergé egg, 0, " +
                     "80, Fabergé egg, -1, 80, Backstage passes to a Coldplay concert, 14, 21, " +
                     "Backstage passes to a Coldplay concert, 9, 50, Backstage passes to a Coldplay concert, 4, 50, " +
@@ -38,7 +39,7 @@ namespace GildedRose.Tests
             }
 
             Assert.AreEqual(
-                gildedRose.ToString(),
+                gildedRose.StringifyItems(items),
                 "4 Pints of Milk, -1, 8, Aged Brie, -9, 20, Elixir of the Mongoose, -6, 0, Fabergé egg, " +
                     "0, 80, Fabergé egg, -1, 80, Backstage passes to a " +
                     "Coldplay concert, 4, 38, Backstage passes to a Coldplay concert, -1, 0, " +
