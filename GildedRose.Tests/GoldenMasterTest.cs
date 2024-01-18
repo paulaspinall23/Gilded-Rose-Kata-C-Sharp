@@ -36,7 +36,7 @@ namespace GildedRose.Tests
 
             for (var i = 0; i < 10; i++) {
                 items = gildedRose.UpdateItems(items).ToList();
-                // gildedRose.UpdateQuality();
+                //gildedRose.UpdateQuality();
             }
 
             Assert.AreEqual(
