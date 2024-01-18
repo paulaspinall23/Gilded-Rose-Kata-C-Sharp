@@ -33,22 +33,22 @@
             if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a Coldplay concert") {
                     if (item.Quality > 0) {
                         if (item.Name != "Fabergé egg") {
-                            newQuality = item.Quality - 1; 
+                            newQuality -= 1; 
                         }
                     }
                 } else {
                     if (item.Quality < 50) {
-                        newQuality = item.Quality + 1;
+                        newQuality += 1;
 
                         if (item.Name == "Backstage passes to a Coldplay concert") {
                             if (item.SellIn < 11) {
                                 if (item.Quality < 50) {
-                                    newQuality = item.Quality + 1;
+                                    newQuality += 1;
                                 }
                             }
                             if (item.SellIn < 6) {
                                 if (item.Quality < 50) {
-                                    newQuality = item.Quality + 1;
+                                    newQuality += 1;
                                 }
                             }
                         }
@@ -60,7 +60,7 @@
                         if (item.Name != "Backstage passes to a Coldplay concert") {
                             if (item.Quality > 0) {
                                 if (item.Name != "Fabergé egg") {
-                                    newQuality = item.Quality - 1;
+                                    newQuality -= 1;
                                 }
                             }
                         } else {
@@ -68,7 +68,7 @@
                         }
                     } else {
                         if (item.Quality < 50) {
-                            newQuality = item.Quality + 1;
+                            newQuality += 1;
                         }
                     }
                 }
