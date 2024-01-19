@@ -14,7 +14,8 @@ namespace GildedRose.Tests
                 new Item("foo", 0, 0)
             };
             var gildedRose = new GildedRoseShop(items);
-            gildedRose.UpdateQuality();
+            items = gildedRose.UpdateItems(items).ToList();
+            //gildedRose.UpdateQuality();
             Assert.AreEqual("foo", items[0].Name);
         }
     }
