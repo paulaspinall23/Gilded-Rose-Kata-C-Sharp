@@ -25,18 +25,18 @@
             int newQuality = item.Quality;
             if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a Coldplay concert") {
 
-                if (newQuality > 0 && item.Name != "Fabergé egg") return newQuality - 1;
+                if (newQuality > 0 && item.Name != "Fabergé egg") newQuality = newQuality - 1;
                 
             } else if (newQuality < 50) {
 
                 newQuality++;
-                if (item.Name == "Backstage passes to a Coldplay concert" && item.SellIn < 11 && newQuality < 50) return newQuality + 1;
-                if (item.Name == "Backstage passes to a Coldplay concert" && item.SellIn < 6 && newQuality < 50) return newQuality + 1;
+                if (item.Name == "Backstage passes to a Coldplay concert" && item.SellIn < 11 && newQuality < 50) newQuality = newQuality + 1;
+                if (item.Name == "Backstage passes to a Coldplay concert" && item.SellIn < 6 && newQuality < 50) newQuality = newQuality + 1;
             }
 
-            if (item.SellIn < 1 && item.Name != "Aged Brie" && item.Name != "Backstage passes to a Coldplay concert" && newQuality > 0 && item.Name != "Fabergé egg") return newQuality - 1;
-            if (item.SellIn < 1 && item.Name == "Backstage passes to a Coldplay concert") return newQuality - newQuality;
-            if (item.SellIn < 1 && item.Name == "Aged Brie" && newQuality < 50) return newQuality + 1;
+            if (item.SellIn < 1 && item.Name != "Aged Brie" && item.Name != "Backstage passes to a Coldplay concert" && newQuality > 0 && item.Name != "Fabergé egg") newQuality = newQuality - 1;
+            if (item.SellIn < 1 && item.Name == "Backstage passes to a Coldplay concert") newQuality = newQuality - newQuality;
+            if (item.SellIn < 1 && item.Name == "Aged Brie" && newQuality < 50) newQuality = newQuality + 1;
             
             return newQuality;
         }
