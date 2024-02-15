@@ -15,77 +15,30 @@
         }
 
         private int GetUpdatedSellIn(Item item) {
+            int newSellIn = item.SellIn;
+            if (item.Name != "Fabergé egg") return newSellIn - 1;
 
-            if (item.Name != "Fabergé egg") {
-                    item.SellIn = item.SellIn - 1;
-                }
-            return item.SellIn;
+            return newSellIn;
         }
 
        private int GetUpdatedQuality(Item item) {
-            
+            int newQuality = item.Quality;
             if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a Coldplay concert") {
 
-                if (item.Quality > 0) {
+                if (newQuality > 0 && item.Name != "Fabergé egg") return newQuality - 1;
+                
+            } else if (newQuality < 50) {
 
-                    if (item.Name != "Fabergé egg") {
-
-                        item.Quality = item.Quality - 1;
-                    }
-                }
-            } else {
-
-                if (item.Quality < 50) {
-
-                    item.Quality = item.Quality + 1;
-
-                    if (item.Name == "Backstage passes to a Coldplay concert") {
-
-                        if (item.SellIn < 10) {
-
-                            if (item.Quality < 50) {
-
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-
-                        if (item.SellIn < 5)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-                    }
-                }
+                newQuality++;
+                if (item.Name == "Backstage passes to a Coldplay concert" && item.SellIn < 11 && newQuality < 50) return newQuality + 1;
+                if (item.Name == "Backstage passes to a Coldplay concert" && item.SellIn < 6 && newQuality < 50) return newQuality + 1;
             }
+
+            if (item.SellIn < 1 && item.Name != "Aged Brie" && item.Name != "Backstage passes to a Coldplay concert" && newQuality > 0 && item.Name != "Fabergé egg") return newQuality - 1;
+            if (item.SellIn < 1 && item.Name == "Backstage passes to a Coldplay concert") return newQuality - newQuality;
+            if (item.SellIn < 1 && item.Name == "Aged Brie" && newQuality < 50) return newQuality + 1;
             
-            if (item.SellIn < 0) {
-
-                if (item.Name != "Aged Brie") {
-
-                    if (item.Name != "Backstage passes to a Coldplay concert") {
-
-                        if (item.Quality > 0) {
-
-                            if (item.Name != "Fabergé egg") {
-
-                                item.Quality = item.Quality - 1;
-                            }
-                        }
-                    } else {
-
-                        item.Quality = item.Quality - item.Quality;
-                    }
-                } else {
-
-                    if (item.Quality < 50) {
-
-                        item.Quality = item.Quality + 1;
-                    }
-                }
-            }
-            return item.Quality;
+            return newQuality;
         }
 
         // public void UpdateQuality()
